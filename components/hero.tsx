@@ -27,7 +27,7 @@ export default function Hero() {
           </p>
           <Link
             href="/get-started"
-            className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-full text-lg font-medium transition-colors"
+            className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-full text-lg font-medium transition-colors relative overflow-hidden"
           >
             Start Now
             <ArrowRight size={20} />

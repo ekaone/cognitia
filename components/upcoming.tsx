@@ -3,7 +3,7 @@ import { upcomingFeatures } from "@/data/upcoming-features";
 
 export default function Upcoming() {
   return (
-    <div className="max-w-7xl mx-auto px-4 mt-32">
+    <div id="upcoming" className="max-w-7xl mx-auto px-4 mt-32">
       <div className="max-w-3xl mx-auto text-center mb-16">
         <h2 className="text-gray-50 text-4xl font-bold sm:text-5xl mb-6">
           Upcoming Features

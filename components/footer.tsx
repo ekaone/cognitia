@@ -20,8 +20,8 @@ export default function Footer() {
             </span>
           </div>
           <p className="text-gray-300 max-w-md text-center">
-            AI-powered cognitive assessment tool for early detection of
-            dementia-related changes.
+            Cognitive assessment tool for early detection of dementia-related
+            changes.
           </p>
         </div>
 
@@ -34,7 +34,7 @@ export default function Footer() {
             className="flex items-center gap-3 text-gray-400 hover:text-white transition group"
           >
             <div className="relative p-2 rounded-full flex items-center justify-center w-9 h-9 overflow-hidden transition-all duration-300 group-hover:shadow-md">
-              <div className="absolute inset-0 bg-gray-800 group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-pink-600 transition-all duration-300"></div>
+              <div className="absolute inset-0 bg-gray-800 group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-cyan-500 transition-all duration-300"></div>
               <Image
                 src="/icon-github.svg"
                 alt="GitHub"

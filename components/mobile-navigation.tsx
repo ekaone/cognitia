@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X, ArrowRight } from "lucide-react";
+import { Particles } from "@/components/magicui/particles";
 
 export default function MobileNavigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,7 +42,18 @@ export default function MobileNavigation() {
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex justify-between items-center p-6 border-b border-gray-800">
+        {/* Particles Background */}
+        <div className="absolute inset-0 overflow-hidden">
+          <Particles
+            className="absolute inset-0"
+            quantity={50}
+            staticity={30}
+            ease={80}
+            color="#ffffff"
+          />
+        </div>
+
+        <div className="relative flex justify-between items-center p-6 border-b border-gray-800">
           <span className="text-xl font-semibold">Menu</span>
           <button
             onClick={toggleMenu}
@@ -51,7 +63,7 @@ export default function MobileNavigation() {
           </button>
         </div>
 
-        <nav className="p-6 space-y-6">
+        <nav className="relative p-6 space-y-6">
           <div className="space-y-4">
             <Link
               href="#methods"
@@ -75,7 +87,7 @@ export default function MobileNavigation() {
               Upcoming
             </Link>
             <Link
-              href="#faqs"
+              href="#faq"
               className="block text-lg text-gray-300 hover:text-white transition-colors"
               onClick={toggleMenu}
             >

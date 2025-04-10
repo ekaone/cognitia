@@ -2,7 +2,7 @@ import { featuresList } from "@/data/features";
 
 export default function Method() {
   return (
-    <div className="max-w-7xl mx-auto px-4 mt-42">
+    <div id="methods" className="max-w-7xl mx-auto px-4 mt-42">
       <div className="max-w-3xl mx-auto text-center mb-16">
         <h2 className="text-gray-50 text-4xl font-bold sm:text-5xl mb-6">
           Cognitive Assessment Tools

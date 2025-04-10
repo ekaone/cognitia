@@ -1,9 +1,5 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+"use client";
+
 import {
   Brain,
   ClipboardCheck,
@@ -16,10 +12,20 @@ import {
   Stethoscope,
   Smartphone,
 } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { BorderBeam } from "@/components/magicui/border-beam";
+import { useState } from "react";
 
 export default function FAQ() {
+  const [openItem, setOpenItem] = useState<string | undefined>(undefined);
+
   return (
-    <div className="max-w-7xl mx-auto px-4 py-24">
+    <div id="faq" className="max-w-7xl mx-auto px-4 py-24">
       <div className="max-w-3xl mx-auto text-center mb-16">
         <h2 className="text-gray-50 text-4xl font-bold sm:text-5xl mb-6">
           FAQs
@@ -30,11 +36,25 @@ export default function FAQ() {
       </div>
 
       <div className="max-w-3xl mx-auto">
-        <Accordion type="single" collapsible className="w-full space-y-4">
+        <Accordion
+          type="single"
+          collapsible
+          className="w-full space-y-4"
+          value={openItem}
+          onValueChange={setOpenItem}
+        >
           <AccordionItem
             value="item-1"
-            className="bg-gray-900/50 rounded-xl border border-gray-800 px-6 mb-4"
+            className="group bg-gray-900/50 rounded-xl border border-gray-800 px-6 mb-4 relative overflow-hidden"
           >
+            {openItem === "item-1" && (
+              <BorderBeam
+                duration={4}
+                size={300}
+                reverse
+                className="bg-gradient-to-r from-transparent via-purple-500 to-transparent"
+              />
+            )}
             <AccordionTrigger className="text-xl font-semibold text-gray-100 hover:text-gray-300">
               <div className="flex items-center gap-4">
                 <Brain className="w-6 h-6 text-purple-500" />
@@ -51,8 +71,16 @@ export default function FAQ() {
 
           <AccordionItem
             value="item-2"
-            className="bg-gray-900/50 rounded-xl border border-gray-800 px-6 mb-4"
+            className="group bg-gray-900/50 rounded-xl border border-gray-800 px-6 mb-4 relative overflow-hidden"
           >
+            {openItem === "item-2" && (
+              <BorderBeam
+                duration={4}
+                size={300}
+                reverse
+                className="bg-gradient-to-r from-transparent via-blue-500 to-transparent"
+              />
+            )}
             <AccordionTrigger className="text-xl font-semibold text-gray-100 hover:text-gray-300">
               <div className="flex items-center gap-4">
                 <ClipboardCheck className="w-6 h-6 text-blue-500" />
@@ -69,8 +97,16 @@ export default function FAQ() {
 
           <AccordionItem
             value="item-3"
-            className="bg-gray-900/50 rounded-xl border border-gray-800 px-6 mb-4"
+            className="group bg-gray-900/50 rounded-xl border border-gray-800 px-6 mb-4 relative overflow-hidden"
           >
+            {openItem === "item-3" && (
+              <BorderBeam
+                duration={4}
+                size={300}
+                reverse
+                className="bg-gradient-to-r from-transparent via-green-500 to-transparent"
+              />
+            )}
             <AccordionTrigger className="text-xl font-semibold text-gray-100 hover:text-gray-300">
               <div className="flex items-center gap-4">
                 <Users className="w-6 h-6 text-green-500" />
@@ -86,8 +122,16 @@ export default function FAQ() {
 
           <AccordionItem
             value="item-4"
-            className="bg-gray-900/50 rounded-xl border border-gray-800 px-6 mb-4"
+            className="group bg-gray-900/50 rounded-xl border border-gray-800 px-6 mb-4 relative overflow-hidden"
           >
+            {openItem === "item-4" && (
+              <BorderBeam
+                duration={4}
+                size={200}
+                reverse
+                className="bg-gradient-to-r from-transparent via-yellow-500 to-transparent"
+              />
+            )}
             <AccordionTrigger className="text-xl font-semibold text-gray-100 hover:text-gray-300">
               <div className="flex items-center gap-4">
                 <BookOpen className="w-6 h-6 text-yellow-500" />
@@ -103,8 +147,16 @@ export default function FAQ() {
 
           <AccordionItem
             value="item-5"
-            className="bg-gray-900/50 rounded-xl border border-gray-800 px-6 mb-4"
+            className="group bg-gray-900/50 rounded-xl border border-gray-800 px-6 mb-4 relative overflow-hidden"
           >
+            {openItem === "item-5" && (
+              <BorderBeam
+                duration={4}
+                size={200}
+                reverse
+                className="bg-gradient-to-r from-transparent via-pink-500 to-transparent"
+              />
+            )}
             <AccordionTrigger className="text-xl font-semibold text-gray-100 hover:text-gray-300">
               <div className="flex items-center gap-4">
                 <MessageSquare className="w-6 h-6 text-pink-500" />
@@ -120,8 +172,16 @@ export default function FAQ() {
 
           <AccordionItem
             value="item-6"
-            className="bg-gray-900/50 rounded-xl border border-gray-800 px-6 mb-4"
+            className="group bg-gray-900/50 rounded-xl border border-gray-800 px-6 mb-4 relative overflow-hidden"
           >
+            {openItem === "item-6" && (
+              <BorderBeam
+                duration={4}
+                size={200}
+                reverse
+                className="bg-gradient-to-r from-transparent via-indigo-500 to-transparent"
+              />
+            )}
             <AccordionTrigger className="text-xl font-semibold text-gray-100 hover:text-gray-300">
               <div className="flex items-center gap-4">
                 <Hash className="w-6 h-6 text-indigo-500" />
@@ -137,8 +197,16 @@ export default function FAQ() {
 
           <AccordionItem
             value="item-7"
-            className="bg-gray-900/50 rounded-xl border border-gray-800 px-6 mb-4"
+            className="group bg-gray-900/50 rounded-xl border border-gray-800 px-6 mb-4 relative overflow-hidden"
           >
+            {openItem === "item-7" && (
+              <BorderBeam
+                duration={4}
+                size={200}
+                reverse
+                className="bg-gradient-to-r from-transparent via-red-500 to-transparent"
+              />
+            )}
             <AccordionTrigger className="text-xl font-semibold text-gray-100 hover:text-gray-300">
               <div className="flex items-center gap-4">
                 <Route className="w-6 h-6 text-red-500" />
@@ -154,8 +222,16 @@ export default function FAQ() {
 
           <AccordionItem
             value="item-8"
-            className="bg-gray-900/50 rounded-xl border border-gray-800 px-6 mb-4"
+            className="group bg-gray-900/50 rounded-xl border border-gray-800 px-6 mb-4 relative overflow-hidden"
           >
+            {openItem === "item-8" && (
+              <BorderBeam
+                duration={4}
+                size={200}
+                reverse
+                className="bg-gradient-to-r from-transparent via-cyan-500 to-transparent"
+              />
+            )}
             <AccordionTrigger className="text-xl font-semibold text-gray-100 hover:text-gray-300">
               <div className="flex items-center gap-4">
                 <Clock className="w-6 h-6 text-cyan-500" />
@@ -171,8 +247,16 @@ export default function FAQ() {
 
           <AccordionItem
             value="item-9"
-            className="bg-gray-900/50 rounded-xl border border-gray-800 px-6 mb-4"
+            className="group bg-gray-900/50 rounded-xl border border-gray-800 px-6 mb-4 relative overflow-hidden"
           >
+            {openItem === "item-9" && (
+              <BorderBeam
+                duration={4}
+                size={300}
+                reverse
+                className="bg-gradient-to-r from-transparent via-orange-500 to-transparent"
+              />
+            )}
             <AccordionTrigger className="text-xl font-semibold text-gray-100 hover:text-gray-300">
               <div className="flex items-center gap-4">
                 <Stethoscope className="w-6 h-6 text-orange-500" />
@@ -188,8 +272,16 @@ export default function FAQ() {
 
           <AccordionItem
             value="item-10"
-            className="bg-gray-900/50 rounded-xl border-2 border-gray-800 px-6 mb-4"
+            className="group bg-gray-900/50 rounded-xl border border-gray-800 px-6 mb-4 relative overflow-hidden"
           >
+            {openItem === "item-10" && (
+              <BorderBeam
+                duration={4}
+                size={200}
+                reverse
+                className="bg-gradient-to-r from-transparent via-emerald-500 to-transparent"
+              />
+            )}
             <AccordionTrigger className="text-xl font-semibold text-gray-100 hover:text-gray-300">
               <div className="flex items-center gap-4">
                 <Smartphone className="w-6 h-6 text-emerald-500" />

@@ -1,34 +1,43 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export default function DesktopNavigation() {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       <nav className="hidden md:flex items-center gap-8">
-        <Link
-          href="#methods"
-          className="text-gray-300 hover:text-white transition-colors text-xl"
+        <button
+          onClick={() => scrollToSection("methods")}
+          className="text-gray-300 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-blue-600 hover:to-cyan-500 transition-all duration-300 text-xl cursor-pointer"
         >
           Methods
-        </Link>
-        <Link
-          href="#data-privacy"
-          className="text-gray-300 hover:text-white transition-colors text-xl"
+        </button>
+        <button
+          onClick={() => scrollToSection("data-privacy")}
+          className="text-gray-300 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-blue-600 hover:to-cyan-500 transition-all duration-300 text-xl cursor-pointer"
         >
           Data Privacy
-        </Link>
-        <Link
-          href="#upcoming"
-          className="text-gray-300 hover:text-white transition-colors text-xl"
+        </button>
+        <button
+          onClick={() => scrollToSection("upcoming")}
+          className="text-gray-300 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-blue-600 hover:to-cyan-500 transition-all duration-300 text-xl cursor-pointer"
         >
           Upcoming
-        </Link>
-        <Link
-          href="#faq"
-          className="text-gray-300 hover:text-white transition-colors text-xl"
+        </button>
+        <button
+          onClick={() => scrollToSection("faq")}
+          className="text-gray-300 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-blue-600 hover:to-cyan-500 transition-all duration-300 text-xl cursor-pointer"
         >
           FAQs
-        </Link>
+        </button>
       </nav>
 
       <div className="hidden md:flex items-center gap-4">
