@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import SectionEffect from "@/components/section-effect";
+import { AuroraText } from "@/components/magicui/aurora-text";
 
 export default function Hero() {
   return (
@@ -19,7 +20,8 @@ export default function Hero() {
             Track Cognitive Changes for Brain Health
           </p>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-gray-100">
-            Smart tools. Simple steps. Better care for your loved ones
+            Smart tools. Simple steps. Better care for your{" "}
+            <AuroraText>loved</AuroraText> ones
           </h1>
           <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
             Cognitia offers reliable, research-based cognitive tests designed

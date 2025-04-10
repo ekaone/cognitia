@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { SparklesText } from "@/components/magicui/sparkles-text";
 
 export default function Footer() {
   return (
@@ -15,9 +16,11 @@ export default function Footer() {
               height={32}
               className="text-purple-500"
             />
-            <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text">
-              Cognitia
-            </span>
+            <SparklesText>
+              <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text">
+                Cognitia
+              </span>
+            </SparklesText>
           </div>
           <p className="text-gray-300 max-w-md text-center">
             Cognitive assessment tool for early detection of dementia-related
