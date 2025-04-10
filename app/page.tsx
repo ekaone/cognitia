@@ -5,6 +5,8 @@ import Hero from "@/components/hero";
 import Method from "@/components/method";
 import DataPrivacy from "@/components/data-privacy";
 import Upcoming from "@/components/upcoming";
+import FAQ from "@/components/faq";
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (
@@ -12,7 +14,9 @@ export default function Home() {
       <header className="container mx-auto flex items-center justify-between py-6 px-4">
         <div className="flex items-center gap-2">
           <Brand />
-          <span className="text-2xl font-semibold">Cognitia</span>
+          <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text">
+            Cognitia
+          </span>
         </div>
 
         {/* Desktop Navigation */}
@@ -27,6 +31,8 @@ export default function Home() {
         <Method />
         <DataPrivacy />
         <Upcoming />
+        <FAQ />
+        <Footer />
       </main>
     </div>
   );
