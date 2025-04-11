@@ -1,5 +1,7 @@
 # 🧠 Cognitia — a cognitive testing and mental wellness platform
 
+> ⚠️ **Work in Progress**: This project is currently under active development. Features and functionality may change as we continue to improve the platform.
+
 Welcome to **Cognitia** — a cognitive testing and mental wellness platform built to assist with early detection and monitoring of memory-related conditions such as dementia.  
 
 Cognitia offers a range of cognitive tests, including verbal fluency tasks, word recall tests, and digit span tests. The platform leverages AI to analyze user inputs and provide insights into cognitive performance.
