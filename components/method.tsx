@@ -1,4 +1,5 @@
 import { featuresList } from "@/data/features";
+import Link from "next/link";
 
 export default function Method() {
   return (
@@ -24,7 +25,35 @@ export default function Method() {
               <h3 className="text-2xl font-semibold mb-4 text-gray-100 text-left">
                 {feature.title}
               </h3>
-              <p className="text-gray-300 text-left text-lg">{feature.desc}</p>
+              <p className="text-gray-300 text-left text-lg mb-6">
+                {feature.desc}
+              </p>
+              {feature.link && (
+                <Link
+                  href={feature.link}
+                  className="group/link relative inline-flex items-center text-left transition-all duration-300"
+                >
+                  <span className="relative z-10 font-medium text-amber-600 hover:text-amber-500">
+                    Start Assessment
+                  </span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="ml-2 relative z-10 transition-transform duration-300 group-hover/link:translate-x-1 text-amber-600 group-hover/link:text-amber-500"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                  </svg>
+                  <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-amber-600 group-hover/link:w-full transition-all duration-300"></span>
+                </Link>
+              )}
             </div>
           </div>
         ))}

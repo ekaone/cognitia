@@ -23,6 +23,7 @@ export const featuresList = [
     ),
     title: "Word Recall Test",
     desc: "Assess short-term memory by recalling previously shown words after a brief delay",
+    link: "/word-recall",
   },
   {
     icon: (
@@ -45,6 +46,7 @@ export const featuresList = [
     ),
     title: "Verbal Fluency Tasks",
     desc: "Evaluate language and executive function by listing words within a category or letter",
+    link: "/verbal-fluency",
   },
   {
     icon: (
@@ -69,6 +71,7 @@ export const featuresList = [
     ),
     title: "Digit Span Test",
     desc: "Measure working memory by repeating sequences of numbers forward and backward",
+    link: "/digit-span",
   },
   {
     icon: (
@@ -91,5 +94,6 @@ export const featuresList = [
     ),
     title: "Trail Making Test",
     desc: "Test visual attention and task-switching by connecting sequences of numbers or letters",
+    link: "/trail-making",
   },
 ];
