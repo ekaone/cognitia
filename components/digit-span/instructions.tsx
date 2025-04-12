@@ -7,27 +7,31 @@ export function Instructions() {
   const { mode, startDisplaying } = useDigitSpanStore();
 
   return (
-    <div className="space-y-6">
-      <div className="space-y-2">
-        <h2 className="text-xl font-semibold">Instructions</h2>
+    <div className="space-y-8 py-6">
+      <div className="space-y-4">
+        <h2 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+          Instructions
+        </h2>
         {mode === "forward" ? (
-          <p>
+          <p className="text-lg text-muted-foreground">
             You will be shown a sequence of digits, one at a time. After the
             sequence is complete, try to recall and enter the digits in the{" "}
-            <strong>same order</strong> they were presented.
+            <strong className="text-purple-600">same order</strong> they were
+            presented.
           </p>
         ) : (
-          <p>
+          <p className="text-lg text-muted-foreground">
             You will be shown a sequence of digits, one at a time. After the
             sequence is complete, try to recall and enter the digits in{" "}
-            <strong>reverse order</strong> from how they were presented.
+            <strong className="text-purple-600">reverse order</strong> from how
+            they were presented.
           </p>
         )}
       </div>
 
-      <div className="space-y-2">
-        <h3 className="font-medium">How it works:</h3>
-        <ul className="ml-6 space-y-1 list-disc">
+      <div className="space-y-4">
+        <h3 className="text-xl font-semibold text-purple-600">How it works:</h3>
+        <ul className="ml-6 space-y-3 list-disc text-lg text-muted-foreground">
           <li>The test starts with a short sequence of digits</li>
           <li>Each digit will be shown for a brief moment</li>
           <li>
@@ -38,8 +42,11 @@ export function Instructions() {
         </ul>
       </div>
 
-      <div className="pt-4">
-        <Button onClick={startDisplaying} className="w-full">
+      <div className="pt-6">
+        <Button
+          onClick={startDisplaying}
+          className="w-full py-6 text-lg font-medium bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white shadow-lg hover:shadow-xl transition-all duration-300"
+        >
           Start Test
         </Button>
       </div>

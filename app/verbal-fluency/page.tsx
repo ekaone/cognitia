@@ -15,14 +15,14 @@ export default function WordRecallPage() {
   const [showInstructions, setShowInstructions] = useState(true);
 
   return (
-    <main className="min-h-screen bg-neutral-50 flex flex-col items-center justify-center p-4 md:p-8">
+    <main className="min-h-screen flex flex-col items-center justify-center p-4 md:p-8">
       <div className="w-full max-w-4xl">
-        <h1 className="text-3xl md:text-4xl font-bold text-center mb-8">
+        <h1 className="text-3xl md:text-4xl font-bold text-center mb-8 bg-gradient-to-r from-green-600 to-white bg-clip-text text-transparent">
           Verbal Fluency Task
         </h1>
 
         {showInstructions && status === "waiting" && (
-          <Card className="mb-6 bg-white/80 backdrop-blur-sm">
+          <Card className="mb-6 bg-white backdrop-blur-sm">
             <CardContent className="pt-6">
               <p className="text-center text-gray-700">
                 This task measures your ability to generate words from a

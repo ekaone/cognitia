@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import { useScoreHistoryStore } from "@/lib/store/score-history-store"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Trash2 } from "lucide-react"
-import { formatDistanceToNow } from "date-fns"
+import { useScoreHistoryStore } from "@/lib/store/score-history-store";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Trash2 } from "lucide-react";
+import { formatDistanceToNow } from "date-fns";
 
 export default function ScoreHistory() {
-  const { scores, clearHistory } = useScoreHistoryStore()
+  const { scores, clearHistory } = useScoreHistoryStore();
 
   if (scores.length === 0) {
     return (
@@ -15,11 +15,13 @@ export default function ScoreHistory() {
         <CardContent className="pt-6">
           <div className="text-center py-10">
             <h3 className="text-lg font-medium mb-2">No History Yet</h3>
-            <p className="text-muted-foreground">Complete a test to see your history here.</p>
+            <p className="text-muted-foreground">
+              Complete a test to see your history here.
+            </p>
           </div>
         </CardContent>
       </Card>
-    )
+    );
   }
 
   return (
@@ -40,7 +42,9 @@ export default function ScoreHistory() {
                     Score: {score.score}/{score.totalWords}
                   </h4>
                   <span className="text-sm text-muted-foreground">
-                    {formatDistanceToNow(new Date(score.date), { addSuffix: true })}
+                    {formatDistanceToNow(new Date(score.date), {
+                      addSuffix: true,
+                    })}
                   </span>
                 </div>
                 <div className="text-sm">
@@ -53,5 +57,5 @@ export default function ScoreHistory() {
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }
