@@ -20,7 +20,8 @@ export function Results() {
           <CheckCircle className="w-16 h-16 text-green-500" />
           <h2 className="text-2xl font-bold">Well done!</h2>
           <p>
-            You've reached level {currentLevel} in the {mode} digit span test.
+            You&apos;ve reached level {currentLevel} in the {mode} digit span
+            test.
           </p>
           <p className="text-muted-foreground">
             This is a great result! The average adult can remember 7±2 digits

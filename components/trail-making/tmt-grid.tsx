@@ -7,16 +7,8 @@ import Timer from "./timer";
 import ProgressTracker from "./progress-tracker";
 
 export default function TMTGrid() {
-  const {
-    items,
-    currentIndex,
-    mistakes,
-    handleItemClick,
-    isTimerRunning,
-    startTimer,
-    stopTimer,
-    elapsedTime,
-  } = useTMTStore();
+  const { items, mistakes, handleItemClick, isTimerRunning, stopTimer } =
+    useTMTStore();
 
   // Stop timer when component unmounts if it's running
   useEffect(() => {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -13,7 +13,7 @@ import { Results } from "@/components/digit-span/results";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowLeft } from "lucide-react";
 
-export default function TestPage() {
+function TestContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const mode = searchParams.get("mode") || "forward";
@@ -22,10 +22,7 @@ export default function TestPage() {
     useDigitSpanStore();
 
   useEffect(() => {
-    // Initialize the test with the selected mode
     initializeTest(mode as "forward" | "backward");
-
-    // Cleanup on unmount
     return () => {
       resetTest();
     };
@@ -140,5 +137,19 @@ export default function TestPage() {
         </Card>
       </motion.div>
     </div>
+  );
+}
+
+export default function TestPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="flex items-center justify-center min-h-screen">
+          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-purple-500"></div>
+        </div>
+      }
+    >
+      <TestContent />
+    </Suspense>
   );
 }

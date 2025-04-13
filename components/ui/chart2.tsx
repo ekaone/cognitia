@@ -13,6 +13,7 @@ import {
   Tooltip,
   Legend,
   type ChartOptions,
+  type ChartData,
 } from "chart.js";
 
 // Register Chart.js components
@@ -27,7 +28,7 @@ ChartJS.register(
 );
 
 interface LineChartProps {
-  data: any;
+  data: ChartData<"line">;
   options?: ChartOptions<"line">;
 }
 

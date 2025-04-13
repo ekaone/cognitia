@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useDigitSpanStore } from "@/lib/store/digit-span-store";
 import { Card } from "@/components/ui/card";
 
@@ -9,6 +9,32 @@ export function DigitDisplay() {
   const [currentIndex, setCurrentIndex] = useState(-1);
   const [showDigit, setShowDigit] = useState(false);
 
+  const displayNextDigit = useCallback(
+    (index: number) => {
+      if (index >= currentSequence.length) {
+        // We've shown all digits, move to input phase
+        setTimeout(() => {
+          startUserInput();
+        }, 500);
+        return;
+      }
+
+      setCurrentIndex(index);
+      setShowDigit(true);
+
+      // Show the digit for 1 second
+      setTimeout(() => {
+        setShowDigit(false);
+
+        // Wait 300ms before showing the next digit
+        setTimeout(() => {
+          displayNextDigit(index + 1);
+        }, 300);
+      }, 1000);
+    },
+    [currentSequence.length, startUserInput]
+  );
+
   useEffect(() => {
     // Initial delay before starting
     const initialDelay = setTimeout(() => {
@@ -16,30 +42,7 @@ export function DigitDisplay() {
     }, 1000);
 
     return () => clearTimeout(initialDelay);
-  }, []);
-
-  const displayNextDigit = (index: number) => {
-    if (index >= currentSequence.length) {
-      // We've shown all digits, move to input phase
-      setTimeout(() => {
-        startUserInput();
-      }, 500);
-      return;
-    }
-
-    setCurrentIndex(index);
-    setShowDigit(true);
-
-    // Show the digit for 1 second
-    setTimeout(() => {
-      setShowDigit(false);
-
-      // Wait 300ms before showing the next digit
-      setTimeout(() => {
-        displayNextDigit(index + 1);
-      }, 300);
-    }, 1000);
-  };
+  }, [displayNextDigit]);
 
   return (
     <div className="flex flex-col items-center justify-center py-12">

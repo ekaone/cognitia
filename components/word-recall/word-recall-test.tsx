@@ -21,7 +21,6 @@ export default function WordRecallTest() {
   const {
     phase,
     wordList,
-    recalledWords,
     score,
     correctWords,
     missedWords,
