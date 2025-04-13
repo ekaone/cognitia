@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { TaskInstructions } from "@/components/word-recall/task-instructions";
-import { CountdownTimer } from "@/components/word-recall/countdown-timer";
-import { WordInputBox } from "@/components/word-recall/word-input-box";
-import { WordValidationResults } from "@/components/word-recall/word-validation-results";
-import { CategorySelector } from "@/components/word-recall/category-selector";
-import { StartButton } from "@/components/word-recall/start-button";
+import { TaskInstructions } from "@/components/verbal-fluency/task-instructions";
+import { CountdownTimer } from "@/components/verbal-fluency/countdown-timer";
+import { WordInputBox } from "@/components/verbal-fluency/word-input-box";
+import { WordValidationResults } from "@/components/verbal-fluency/word-validation-results";
+import { CategorySelector } from "@/components/verbal-fluency/category-selector";
+import { StartButton } from "@/components/verbal-fluency/start-button";
 import { useTaskStore } from "@/lib/store/use-task-store";
 import { Card, CardContent } from "@/components/ui/card";
 

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { Particles } from "@/components/magicui/particles";
 
@@ -15,6 +14,13 @@ export default function MobileNavigation() {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "auto";
+    }
+  };
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -65,45 +71,59 @@ export default function MobileNavigation() {
 
         <nav className="relative p-6 space-y-6">
           <div className="space-y-4">
-            <Link
-              href="#methods"
-              className="block text-lg text-gray-300 hover:text-white transition-colors"
-              onClick={toggleMenu}
+            <button
+              onClick={() => {
+                scrollToSection("methods");
+                toggleMenu();
+              }}
+              className="block text-lg text-gray-300 hover:text-white transition-colors w-full text-left"
             >
               Methods
-            </Link>
-            <Link
-              href="#data-privacy"
-              className="block text-lg text-gray-300 hover:text-white transition-colors"
-              onClick={toggleMenu}
+            </button>
+            <button
+              onClick={() => {
+                scrollToSection("data-privacy");
+                toggleMenu();
+              }}
+              className="block text-lg text-gray-300 hover:text-white transition-colors w-full text-left"
             >
               Data Privacy
-            </Link>
-            <Link
-              href="#upcoming"
-              className="block text-lg text-gray-300 hover:text-white transition-colors"
-              onClick={toggleMenu}
+            </button>
+            <button
+              onClick={() => {
+                scrollToSection("upcoming");
+                toggleMenu();
+              }}
+              className="block text-lg text-gray-300 hover:text-white transition-colors w-full text-left"
             >
               Upcoming
-            </Link>
-            <Link
-              href="#faq"
-              className="block text-lg text-gray-300 hover:text-white transition-colors"
-              onClick={toggleMenu}
+            </button>
+            <button
+              onClick={() => {
+                scrollToSection("faq");
+                toggleMenu();
+              }}
+              className="block text-lg text-gray-300 hover:text-white transition-colors w-full text-left"
             >
               FAQs
-            </Link>
+            </button>
           </div>
 
           <div className="pt-6 border-t border-gray-800 space-y-4">
-            <Link
-              href="/start"
-              className="flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-full transition-colors w-full justify-center border border-gray-700 custom-btn-bg"
-              onClick={toggleMenu}
+            <button
+              onClick={() => {
+                scrollToSection("methods");
+                toggleMenu();
+              }}
+              className="group relative flex items-center gap-2 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-6 py-2.5 rounded-full transition-all duration-300 text-xl border-0 shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 w-full justify-center"
             >
-              Start now
-              <ArrowRight size={16} />
-            </Link>
+              <span className="relative z-10">Start now</span>
+              <ArrowRight
+                size={16}
+                className="relative z-10 transition-transform duration-300 group-hover:translate-x-1"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full blur-sm group-hover:blur-md transition-all duration-300 opacity-50"></div>
+            </button>
           </div>
         </nav>
       </div>

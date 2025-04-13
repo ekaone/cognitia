@@ -28,10 +28,10 @@ export default function Hero() {
             for early detection of dementia-related symptoms.
           </p>
           <Link
-            href="/get-started"
+            href="/digit-span"
             className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-full text-lg font-medium transition-colors relative overflow-hidden"
           >
-            Start Now
+            Try Digit Span Test
             <ArrowRight size={20} />
           </Link>
         </div>

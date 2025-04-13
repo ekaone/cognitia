@@ -1,5 +1,5 @@
-import WordRecallTest from "@/components/word-recall-test";
-import WordRecallHistory from "@/components/word-recall-history";
+import WordRecallTest from "@/components/word-recall/word-recall-test";
+import WordRecallHistory from "@/components/word-recall/word-recall-history";
 
 export default function Home() {
   return (

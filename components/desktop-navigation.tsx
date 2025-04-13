@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export default function DesktopNavigation() {
@@ -41,13 +40,17 @@ export default function DesktopNavigation() {
       </nav>
 
       <div className="hidden md:flex items-center gap-4">
-        <Link
-          href="/start"
-          className="flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-full transition-colors text-xl border border-gray-700 custom-btn-bg"
+        <button
+          onClick={() => scrollToSection("methods")}
+          className="group relative flex items-center gap-2 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-6 py-2.5 rounded-full transition-all duration-300 text-xl border-0 shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40"
         >
-          Start now
-          <ArrowRight size={16} />
-        </Link>
+          <span className="relative z-10">Start now</span>
+          <ArrowRight
+            size={16}
+            className="relative z-10 transition-transform duration-300 group-hover:translate-x-1"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full blur-sm group-hover:blur-md transition-all duration-300 opacity-50"></div>
+        </button>
       </div>
     </>
   );
