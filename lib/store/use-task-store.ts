@@ -35,8 +35,8 @@ export const useTaskStore = create<TaskState>()(
     (set, get) => ({
       status: "waiting",
       category: "animals",
-      timeLimit: 15,
-      timeRemaining: 15,
+      timeLimit: 30,
+      timeRemaining: 30,
       words: [],
       history: [],
 

@@ -7,21 +7,30 @@ import { WordValidationResults } from "@/components/verbal-fluency/word-validati
 import { CategorySelector } from "@/components/verbal-fluency/category-selector";
 import { StartButton } from "@/components/verbal-fluency/start-button";
 import { useTaskStore } from "@/lib/store/use-task-store";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Brain, Clock, ListChecks } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Album, LayoutList, Clock, ListChecks, Bot } from "lucide-react";
 import { motion } from "motion/react";
 
 export default function VerbalFluencyPage() {
   const { status } = useTaskStore();
 
   return (
-    <div className="container max-w-2xl mx-auto py-8 px-4">
+    <div className="container max-w-2xl mx-auto py-8 px-4 space-y-8">
+      <div className="flex justify-center w-full">
+        <div className="flex items-center space-x-2">
+          <Album className="w-6 h-6 text-emerald-400" />
+          <h1 className="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-emerald-300 bg-clip-text text-transparent">
+            VerbalFluency
+          </h1>
+        </div>
+      </div>
+      <h1 className="text-4xl font-bold tracking-tight sm:text-5xl text-center pb-2 mb-2 bg-gradient-to-r from-emerald-400 to-emerald-300 bg-clip-text text-transparent">
+        Verbal Fluency Task
+      </h1>
+      <p className="text-center text-emerald-200/90 mb-8 font-medium">
+        A cognitive assessment tool to measure verbal fluency
+      </p>
       <Card className="border-2 border-emerald-100">
-        <CardHeader className="text-center pb-2">
-          <CardTitle className="text-3xl font-bold bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent">
-            Verbal Fluency Task
-          </CardTitle>
-        </CardHeader>
         <CardContent className="pt-6 space-y-8">
           {status === "waiting" && (
             <>
@@ -55,7 +64,7 @@ export default function VerbalFluencyPage() {
                     transition={{ delay: 0.2 }}
                     className="flex items-center gap-2"
                   >
-                    <Brain className="w-4 h-4 text-emerald-600" />
+                    <LayoutList className="w-4 h-4 text-emerald-600" />
                     <span>Select a category</span>
                   </motion.div>
 
@@ -66,7 +75,27 @@ export default function VerbalFluencyPage() {
                     className="flex items-center gap-2"
                   >
                     <Clock className="w-4 h-4 text-emerald-600" />
-                    <span>60 seconds time limit</span>
+                    <span>30 seconds time limit</span>
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.3 }}
+                    className="flex items-center gap-2"
+                  >
+                    <motion.div
+                      animate={{ x: [0, -4, 4, -4, 4, 0] }} // Shake left-right
+                      transition={{
+                        duration: 0.6, // Duration of one shake
+                        repeat: Infinity, // Keep it going
+                        repeatDelay: 2.4, // 3s total interval (0.6 + 2.4)
+                        ease: "easeInOut",
+                      }}
+                    >
+                      <Bot className="w-4 h-4 text-emerald-600" />
+                    </motion.div>
+                    <span>AI Validation</span>
                   </motion.div>
                 </div>
               </motion.div>

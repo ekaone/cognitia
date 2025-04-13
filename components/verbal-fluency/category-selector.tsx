@@ -10,11 +10,11 @@ import {
 } from "@/components/ui/select";
 
 const categories = [
-  { value: "animals", label: "Animals" },
-  { value: "fruits", label: "Fruits" },
-  { value: "countries", label: "Countries" },
-  { value: "sports", label: "Sports" },
-  { value: "professions", label: "Professions" },
+  { value: "animals", label: "🐾 Animals" },
+  { value: "fruits", label: "🍎 Fruits" },
+  { value: "countries", label: "🌍 Countries" },
+  { value: "sports", label: "⚽ Sports" },
+  { value: "professions", label: "👨‍💼 Professions" },
 ];
 
 export function CategorySelector() {

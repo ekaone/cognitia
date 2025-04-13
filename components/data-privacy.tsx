@@ -45,8 +45,8 @@ export default function DataPrivacy() {
                 Data Security
               </h3>
               <p className="text-gray-300 text-left text-lg">
-                Your data is encrypted and protected. Only you have access to
-                your assessment history and results.
+                Your data is protected. Only you have access to your assessment
+                history and results.
               </p>
             </div>
           </div>

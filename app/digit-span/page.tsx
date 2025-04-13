@@ -36,8 +36,8 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen w-full max-w-7xl mx-auto px-4 py-12 space-y-8">
-      <div className="flex items-center justify-between w-full">
+    <div className="flex flex-col items-center justify-center min-h-screen w-full max-w-7xl mx-auto px-4 py-8 space-y-8">
+      <div className="flex justify-center w-full">
         <div className="flex items-center space-x-2">
           <Brain className="w-6 h-6 text-purple-600" />
           <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
@@ -50,7 +50,7 @@ export default function Home() {
         <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
           Test Your Memory Capacity
         </h1>
-        <p className="max-w-[42rem] mx-auto text-muted-foreground text-xl">
+        <p className="max-w-[42rem] mx-auto text-xl text-gray-300">
           Challenge your short-term memory and working memory with our digit
           span test.
         </p>
