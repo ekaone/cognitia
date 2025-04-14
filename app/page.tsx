@@ -1,3 +1,5 @@
+import { Meteors } from "@/components/magicui/meteors";
+
 import MobileNavigation from "@/components/mobile-navigation";
 import DesktopNavigation from "@/components/desktop-navigation";
 import Brand from "@/components/brand";
@@ -35,6 +37,21 @@ export default function Home() {
         <FAQ />
         <Footer />
         <HeadingBar />
+        {/* background meteors */}
+        <Meteors
+          number={10}
+          colors={[
+            "#71717a", // zinc-500
+            "#ef4444", // red-500
+            "#3b82f6", // blue-500
+            "#10b981", // emerald-500
+            "#f59e0b", // amber-500
+            "#8b5cf6", // violet-500
+            "#ec4899", // pink-500
+            "#06b6d4", // cyan-500
+            "#84cc16", // lime-500
+          ]}
+        />
       </main>
     </div>
   );

@@ -3,7 +3,7 @@ import { generateText } from "ai";
 import { openai } from "@ai-sdk/openai";
 import { validateWordsPrompt } from "@/lib/ai-prompts";
 
-// Simple in-memory rate limiting
+// in-memory rate limiting
 const rateLimit = new Map<string, { count: number; resetTime: number }>();
 const RATE_LIMIT_WINDOW = 30000; // 30 seconds
 const MAX_REQUESTS = 20; // Max requests per 30 seconds
