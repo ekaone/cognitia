@@ -7,6 +7,7 @@ import DataPrivacy from "@/components/data-privacy";
 import Upcoming from "@/components/upcoming";
 import FAQ from "@/components/faq";
 import Footer from "@/components/footer";
+import HeadingBar from "@/components/heading-bar";
 
 export default function Home() {
   return (
@@ -33,6 +34,7 @@ export default function Home() {
         <Upcoming />
         <FAQ />
         <Footer />
+        <HeadingBar />
       </main>
     </div>
   );
