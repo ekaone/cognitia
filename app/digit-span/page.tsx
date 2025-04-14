@@ -67,7 +67,7 @@ export default function Home() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="flex items-center justify-center p-6 text-2xl font-bold text-center">
+            <div className="flex flex-col sm:flex-row items-center justify-center p-6 text-2xl font-bold text-center gap-2">
               <div className="flex space-x-2">
                 <span className="p-2 border rounded bg-purple-50 dark:bg-purple-900/20 text-purple-600">
                   3
@@ -92,6 +92,7 @@ export default function Home() {
                     repeat: Infinity,
                     ease: "easeInOut",
                   }}
+                  className="rotate-90 sm:rotate-0"
                 >
                   <ArrowRight className="size-8 mx-6 text-purple-600" />
                 </motion.div>
@@ -131,7 +132,7 @@ export default function Home() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="flex items-center justify-center p-6 text-2xl font-bold text-center">
+            <div className="flex flex-col sm:flex-row items-center justify-center p-6 text-2xl font-bold text-center gap-2">
               <div className="flex space-x-2">
                 <span className="p-2 border rounded bg-purple-50 dark:bg-purple-900/20 text-purple-600">
                   3
@@ -156,6 +157,7 @@ export default function Home() {
                     repeat: Infinity,
                     ease: "easeInOut",
                   }}
+                  className="rotate-90 sm:rotate-0"
                 >
                   <ArrowRight className="size-8 mx-6 text-purple-600" />
                 </motion.div>
