@@ -168,9 +168,16 @@ export default function ScoreHistoryTable({
       {/* Recent Scores - Only show in compact mode */}
       {compact && scoreHistory.length > 0 && (
         <div>
-          <h4 className="text-md font-medium text-gray-700 mb-2">
-            Recent Scores
-          </h4>
+          <div className="flex justify-between items-center mb-2">
+            <h4 className="text-md font-medium text-gray-700">Recent Scores</h4>
+            <button
+              onClick={clearScoreHistory}
+              className="text-xs text-red-500 hover:text-red-700 transition-colors flex items-center gap-1"
+            >
+              <Trash2 size={12} />
+              <span>Clear History</span>
+            </button>
+          </div>
           <div className="space-y-2">
             {scoreHistory
               .sort((a, b) => b.timestamp - a.timestamp)
@@ -296,19 +303,6 @@ export default function ScoreHistoryTable({
               </div>
             </div>
           )}
-        </div>
-      )}
-
-      {/* Clear History button for compact view */}
-      {compact && scoreHistory.length > 0 && (
-        <div className="mt-4 text-center">
-          <button
-            onClick={clearScoreHistory}
-            className="text-xs text-red-500 hover:text-red-700 transition-colors flex items-center gap-1 mx-auto"
-          >
-            <Trash2 size={12} />
-            <span>Clear History</span>
-          </button>
         </div>
       )}
     </div>

@@ -1,10 +1,18 @@
-import { Activity } from "lucide-react";
+import { Activity, History } from "lucide-react";
 import TMTWrapper from "@/components/trail-making/tmt-wrapper";
 import ScoreHistorySection from "@/components/trail-making/score-history-section";
+import { Button } from "@/components/ui/button";
+import {
+  Drawer,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center py-8">
+    <div className="flex flex-col items-center justify-center py-8 w-full max-w-7xl mx-auto px-4 py-8 space-y-8">
       <div className="w-full max-w-5xl space-y-8">
         <div className="flex justify-center w-full">
           <div className="flex items-center space-x-2">
@@ -22,17 +30,33 @@ export default function Home() {
           switching
         </p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Main TMT Test Area - Takes 2/3 of the space on large screens */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* Main TMT Test Area - Takes full width on large screens */}
           <div className="lg:col-span-2">
             <TMTWrapper />
           </div>
-
-          {/* Score History Section - Takes 1/3 of the space on large screens */}
-          <div className="lg:col-span-1">
-            <ScoreHistorySection />
-          </div>
         </div>
+
+        <Drawer>
+          <DrawerTrigger asChild>
+            <Button
+              variant="outline"
+              className="fixed bottom-6 right-6 flex items-center justify-center border-emerald-200 text-emerald-400 hover:bg-emerald-50 hover:text-emerald-600 h-12 w-12 rounded-full shadow-lg"
+            >
+              <History className="h-5 w-5" />
+            </Button>
+          </DrawerTrigger>
+          <DrawerContent>
+            <DrawerHeader className="text-center">
+              <DrawerTitle className="text-3xl font-bold bg-gradient-to-r from-emerald-400 to-emerald-300 bg-clip-text text-transparent">
+                Performance History
+              </DrawerTitle>
+            </DrawerHeader>
+            <div className="p-4 overflow-auto max-w-md mx-auto">
+              <ScoreHistorySection />
+            </div>
+          </DrawerContent>
+        </Drawer>
       </div>
     </div>
   );

@@ -108,7 +108,7 @@ export default function WordRecallTest() {
 
   return (
     <div className="max-w-3xl mx-auto">
-      <Card className="border-0 shadow-lg bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
+      <Card className="border-0 shadow-lg bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 justify-center">
         <CardContent className="pt-8">
           <AnimatePresence mode="wait">
             {phase === "idle" && (

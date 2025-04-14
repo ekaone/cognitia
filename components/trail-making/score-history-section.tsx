@@ -11,7 +11,7 @@ export default function ScoreHistorySection() {
       className="bg-white rounded-xl shadow-md p-6 h-full"
     >
       <h2 className="text-xl font-semibold mb-4 text-gray-800">
-        Your Performance History
+        Your visual attention and task switching Scoreboard
       </h2>
       <ScoreHistoryTable compact={true} />
     </motion.div>

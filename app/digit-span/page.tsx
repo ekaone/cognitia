@@ -9,9 +9,16 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Link from "next/link";
-import { Brain, ArrowRight, BarChart2 } from "lucide-react";
+import { Brain, ArrowRight, History } from "lucide-react";
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
+import {
+  Drawer,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
 
 export default function Home() {
   const [stats, setStats] = useState({
@@ -36,7 +43,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen w-full max-w-7xl mx-auto px-4 py-8 space-y-8">
+    <div className="flex flex-col items-center justify-center w-full max-w-7xl mx-auto px-4 py-8 space-y-8">
       <div className="flex justify-center w-full">
         <div className="flex items-center space-x-2">
           <Brain className="w-6 h-6 text-purple-600" />
@@ -188,89 +195,83 @@ export default function Home() {
         </Card>
       </div>
 
-      <div className="flex flex-col items-center mt-12 space-y-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-            Your Performance
-          </h2>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          whileHover={{ scale: 1.05 }}
-          className="mb-4"
-        >
-          <Link href="/digit-span/stats">
-            <Button
-              variant="outline"
-              className="flex items-center space-x-2 border-purple-200 text-purple-600 hover:bg-purple-50 hover:text-purple-700 h-12 px-6"
-            >
-              <BarChart2 className="w-4 h-4" />
-              <span className="font-medium">View Stats</span>
-            </Button>
-          </Link>
-        </motion.div>
-
-        <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            whileHover={{ scale: 1.02 }}
+      <Drawer>
+        <DrawerTrigger asChild>
+          <Button
+            variant="outline"
+            className="fixed bottom-6 right-6 flex items-center justify-center border-purple-200 text-purple-600 hover:bg-purple-50 hover:text-purple-700 h-12 w-12 rounded-full shadow-lg"
           >
-            <Card className="w-48 border-2 border-purple-100 dark:border-purple-900/30 shadow-lg hover:shadow-xl transition-shadow">
-              <CardHeader className="p-4 pb-2">
-                <CardTitle className="text-sm text-purple-600 flex items-center">
-                  <Brain className="w-4 h-4 mr-2" />
-                  Forward Best
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="p-4 pt-0">
-                <motion.p
-                  className="text-4xl font-bold text-center text-purple-600"
-                  initial={{ scale: 0.8 }}
-                  animate={{ scale: 1 }}
-                  transition={{ type: "spring", stiffness: 200 }}
-                >
-                  {stats.forward.best}
-                </motion.p>
-              </CardContent>
-            </Card>
-          </motion.div>
+            <History className="h-5 w-5" />
+          </Button>
+        </DrawerTrigger>
+        <DrawerContent>
+          <DrawerHeader className="text-center">
+            <DrawerTitle className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+              Your Performance
+            </DrawerTitle>
+          </DrawerHeader>
+          <div className="flex flex-col items-center p-6 space-y-6">
+            <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                whileHover={{ scale: 1.02 }}
+              >
+                <Card className="w-48 border-2 border-purple-100 dark:border-purple-900/30 shadow-lg hover:shadow-xl transition-shadow">
+                  <CardHeader className="p-4 pb-2">
+                    <CardTitle className="text-sm text-purple-600 flex justify-center">
+                      <Brain className="w-4 h-4 mr-2" />
+                      Forward Best
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="p-4 pt-0">
+                    <motion.p
+                      className="text-4xl font-bold text-center text-purple-600"
+                      initial={{ scale: 0.8 }}
+                      animate={{ scale: 1 }}
+                      transition={{ type: "spring", stiffness: 200 }}
+                    >
+                      {stats.forward.best}
+                    </motion.p>
+                  </CardContent>
+                </Card>
+              </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            whileHover={{ scale: 1.02 }}
-          >
-            <Card className="w-48 border-2 border-purple-100 dark:border-purple-900/30 shadow-lg hover:shadow-xl transition-shadow">
-              <CardHeader className="p-4 pb-2">
-                <CardTitle className="text-sm text-purple-600 flex items-center">
-                  <Brain className="w-4 h-4 mr-2" />
-                  Backward Best
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="p-4 pt-0">
-                <motion.p
-                  className="text-4xl font-bold text-center text-purple-600"
-                  initial={{ scale: 0.8 }}
-                  animate={{ scale: 1 }}
-                  transition={{ type: "spring", stiffness: 200 }}
-                >
-                  {stats.backward.best}
-                </motion.p>
-              </CardContent>
-            </Card>
-          </motion.div>
-        </div>
-      </div>
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                whileHover={{ scale: 1.02 }}
+              >
+                <Card className="w-48 border-2 border-purple-100 dark:border-purple-900/30 shadow-lg hover:shadow-xl transition-shadow">
+                  <CardHeader className="p-4 pb-2">
+                    <CardTitle className="text-sm text-purple-600 flex justify-center">
+                      <Brain className="w-4 h-4 mr-2" />
+                      Backward Best
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="p-4 pt-0">
+                    <motion.p
+                      className="text-4xl font-bold text-center text-purple-600"
+                      initial={{ scale: 0.8 }}
+                      animate={{ scale: 1 }}
+                      transition={{ type: "spring", stiffness: 200 }}
+                    >
+                      {stats.backward.best}
+                    </motion.p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            </div>
+            <Link href="/digit-span/stats" className="w-full max-w-xs">
+              <Button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white">
+                View Stats
+              </Button>
+            </Link>
+          </div>
+        </DrawerContent>
+      </Drawer>
     </div>
   );
 }

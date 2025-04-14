@@ -11,13 +11,13 @@ export default function TestInstructions() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="flex flex-col items-center max-w-2xl mx-auto p-8 bg-white rounded-2xl shadow-lg"
+      className="flex flex-col items-center max-w-2xl mx-auto p-8"
     >
       <motion.h2
         initial={{ scale: 0.95, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 0.2 }}
-        className="text-3xl font-bold mb-6 text-gray-800 bg-gradient-to-r from-emerald-600 to-emerald-500 bg-clip-text text-transparent"
+        className="text-3xl font-bold mb-6 bg-gradient-to-r from-emerald-600 to-emerald-500 bg-clip-text text-transparent"
       >
         {currentPhaseNumber === 1
           ? "Phase 1: Numbers"
@@ -31,35 +31,32 @@ export default function TestInstructions() {
         className="mb-8 text-gray-700 space-y-4 text-lg leading-relaxed"
       >
         {currentPhaseNumber === 1 ? (
-          <>
-            <p className="flex items-center gap-2">
-              <span className="text-emerald-500">•</span>
-              In this test, you will see numbers from 1 to 15 scattered on the
+          <ul className="space-y-4 list-none">
+            <li className="flex items-center gap-2">
+              • In this test, you will see numbers from 1 to 15 scattered on the
               screen.
-            </p>
-            <p className="flex items-center gap-2">
-              <span className="text-emerald-500">•</span>
-              Click on each number in ascending order (1, 2, 3, ...) as quickly
-              as possible.
-            </p>
-          </>
+            </li>
+            <li className="flex items-center gap-2">
+              • Click on each number in ascending order (1, 2, 3, ...) as
+              quickly as possible.
+            </li>
+          </ul>
         ) : (
-          <>
-            <p className="flex items-center gap-2">
-              <span className="text-emerald-500">•</span>
-              In this phase, you will see numbers and letters scattered on the
+          <ul className="space-y-4 list-none">
+            <li className="flex items-center gap-2">
+              • In this phase, you will see numbers and letters scattered on the
               screen.
-            </p>
-            <p className="flex items-center gap-2">
-              <span className="text-emerald-500">•</span>
-              Click on them in alternating order: 1, A, 2, B, 3, C, and so on.
-            </p>
-          </>
+            </li>
+            <li className="flex items-center gap-2">
+              • Click on them in alternating order: 1, A, 2, B, 3, C, and so on.
+            </li>
+          </ul>
         )}
-        <p className="flex items-center gap-2 text-emerald-600 font-medium">
-          <span className="text-emerald-500">•</span>
-          The timer will start when you click on the first correct item.
-        </p>
+        <ul className="space-y-4 list-none">
+          <li className="flex items-center gap-2 text-emerald-600 font-medium">
+            • The timer will start when you click on the first correct item.
+          </li>
+        </ul>
       </motion.div>
 
       <motion.button

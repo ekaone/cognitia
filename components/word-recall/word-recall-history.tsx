@@ -7,55 +7,75 @@ import {
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { CheckCircle, XCircle, Trash2 } from "lucide-react";
+import { CheckCircle, XCircle, Trash2, History } from "lucide-react";
 import { format } from "date-fns";
+import {
+  Drawer,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
 
 export default function WordRecallHistory() {
   const { scores, clearHistory } = useWordRecallHistoryStore();
 
-  if (scores.length === 0) {
-    return (
-      <Card className="w-full">
-        <CardContent className="pt-6">
-          <div className="text-center text-muted-foreground">
-            No test history yet. Complete a test to see your results here.
-          </div>
-        </CardContent>
-      </Card>
-    );
-  }
-
   return (
-    <Card className="w-full">
-      <CardContent className="pt-6">
-        <div className="flex justify-between items-center mb-4">
-          <h3 className="text-lg font-medium">Test History</h3>
+    <>
+      <Drawer>
+        <DrawerTrigger asChild>
           <Button
             variant="outline"
-            size="sm"
-            onClick={clearHistory}
-            className="text-red-500 hover:text-red-600"
+            size="icon"
+            className="fixed bottom-6 right-6 flex items-center justify-center border-purple-200 text-purple-600 hover:bg-purple-50 hover:text-purple-700 h-12 w-12 rounded-full shadow-lg"
           >
-            <Trash2 className="w-4 h-4 mr-2" />
-            Clear History
+            <History className="h-5 w-5" />
           </Button>
-        </div>
-        <ScrollArea className="h-[400px]">
-          <div className="space-y-4">
-            {scores.map((score) => (
-              <ScoreCard key={score.id} score={score} />
-            ))}
+        </DrawerTrigger>
+        <DrawerContent>
+          <DrawerHeader>
+            <DrawerTitle className="text-center text-2xl font-bold text-purple-600">
+              Test History
+            </DrawerTitle>
+          </DrawerHeader>
+          <div className="p-4 max-w-md mx-auto">
+            {scores.length === 0 ? (
+              <div className="text-center text-muted-foreground">
+                No test history yet. Complete a test to see your results here.
+              </div>
+            ) : (
+              <>
+                <div className="flex justify-end mb-4">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={clearHistory}
+                    className="text-red-500 hover:text-red-600"
+                  >
+                    <Trash2 className="w-4 h-4 mr-2" />
+                    Clear History
+                  </Button>
+                </div>
+                <ScrollArea className="h-[400px]">
+                  <div className="space-y-4">
+                    {scores.map((score) => (
+                      <ScoreCard key={score.id} score={score} />
+                    ))}
+                  </div>
+                </ScrollArea>
+              </>
+            )}
           </div>
-        </ScrollArea>
-      </CardContent>
-    </Card>
+        </DrawerContent>
+      </Drawer>
+    </>
   );
 }
 
 function ScoreCard({ score }: { score: WordRecallScore }) {
   return (
-    <Card className="border-2">
-      <CardContent className="pt-4">
+    <Card className="border-2 max-w-md mx-auto">
+      <CardContent className="pt-3">
         <div className="flex justify-between items-start mb-2">
           <div>
             <h4 className="font-medium">

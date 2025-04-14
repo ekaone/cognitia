@@ -17,7 +17,7 @@ export default function TMTWrapper() {
   }, [resetTest]);
 
   return (
-    <div className="bg-white rounded-xl shadow-md p-6 transition-all duration-300">
+    <div className="bg-white rounded-xl shadow-md p-6 transition-all duration-300 max-w-2xl mx-auto">
       {phase === "instructions" && <TestInstructions />}
       {phase === "test" && <TMTGrid />}
       {phase === "results" && <ResultEvaluator />}
