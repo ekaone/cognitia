@@ -25,7 +25,7 @@ export default function FAQ() {
   const [openItem, setOpenItem] = useState<string | undefined>(undefined);
 
   return (
-    <div id="faq" className="max-w-7xl mx-auto px-4 py-24">
+    <div id="faq" className="max-w-7xl mx-auto px-4 mt-32">
       <div className="max-w-3xl mx-auto text-center mb-16">
         <h2 className="text-gray-50 text-4xl font-bold sm:text-5xl mb-6">
           FAQs

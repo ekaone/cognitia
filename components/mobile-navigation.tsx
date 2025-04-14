@@ -1,26 +1,50 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { Particles } from "@/components/magicui/particles";
 
 export default function MobileNavigation() {
   const [isOpen, setIsOpen] = useState(false);
 
+  // Prevent horizontal movement on mount
+  useEffect(() => {
+    // Prevent horizontal touch movement
+    document.body.style.overscrollBehaviorX = "none";
+    document.documentElement.style.touchAction = "pan-y pinch-zoom";
+    document.documentElement.style.overflowX = "hidden";
+
+    return () => {
+      document.body.style.overscrollBehaviorX = "auto";
+      document.documentElement.style.touchAction = "auto";
+      document.documentElement.style.overflowX = "auto";
+    };
+  }, []);
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
-    // Prevent scrolling when menu is open
     if (!isOpen) {
       document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed";
+      document.body.style.width = "100%";
+      document.body.style.touchAction = "none";
     } else {
       document.body.style.overflow = "auto";
+      document.body.style.position = "static";
+      document.body.style.width = "auto";
+      document.body.style.touchAction = "pan-y pinch-zoom";
     }
   };
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      // Close menu first
+      toggleMenu();
+      // Add a small delay to ensure menu closing animation completes
+      setTimeout(() => {
+        element.scrollIntoView({ behavior: "smooth" });
+      }, 300);
     }
   };
 
@@ -36,7 +60,7 @@ export default function MobileNavigation() {
 
       {/* Mobile menu overlay */}
       <div
-        className={`fixed inset-0 bg-black bg-opacity-80 z-50 transition-opacity duration-300 ${
+        className={`fixed inset-0 bg-black bg-opacity-90 z-50 transition-opacity duration-300 ${
           isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
         onClick={toggleMenu}
@@ -44,7 +68,7 @@ export default function MobileNavigation() {
 
       {/* Mobile menu slide-out panel */}
       <div
-        className={`fixed top-0 right-0 w-[80%] max-w-sm h-full bg-gradient-to-b from-[#111827] to-[#1f1031] z-50 transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 right-0 w-[75%] h-full bg-gradient-to-b from-[#111827] to-[#1f1031] z-50 transform transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -60,7 +84,7 @@ export default function MobileNavigation() {
         </div>
 
         <div className="relative flex justify-between items-center p-6 border-b border-gray-800">
-          <span className="text-xl font-semibold">Menu</span>
+          <span className="text-xl font-semibold">Cognitia</span>
           <button
             onClick={toggleMenu}
             className="p-2 text-gray-300 hover:text-white focus:outline-none"
