@@ -37,7 +37,7 @@ export default function Home() {
         <FAQ />
         <Footer />
         <HeadingBar />
-        {/* background meteors */}
+        {/* Meteors background */}
         <Meteors
           number={10}
           colors={[

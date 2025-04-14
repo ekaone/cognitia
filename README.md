@@ -6,7 +6,7 @@ Welcome to **Cognitia** — a cognitive testing and mental wellness platform bui
 
 Cognitia offers a range of cognitive tests, including verbal fluency tasks, word recall tests, and digit span tests. The platform leverages AI to analyze user inputs and provide insights into cognitive performance.
 
-The goal is to create a user-friendly and privacy-first experience, ensuring that all data processing occurs locally in the user's browser without storing any personal information on the server.
+The goal is to create an AI-powered, user-friendly, and privacy-first experience, where all data processing occurs locally in the user's browser—ensuring that no personal information is stored or transmitted to any server. The AI will act as a personal assistant for each user, providing intelligent support and real-time interactions while maintaining full user control and data confidentiality.
 
 
 ## 🚀 Live Site  
