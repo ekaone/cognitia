@@ -20,7 +20,8 @@ The goal is to create an AI-powered, user-friendly, and privacy-first experience
 - **Styling**: [Shadcn UI](https://ui.shadcn.com/) and [Tailwind CSS](https://tailwindcss.com/)
 - **AI Integration**:
   - [OpenAI GPT API](https://platform.openai.com/)
-  - [Gemini AI (Google)](https://ai.google.dev/)
+  - [ElevenLabs](https://elevenlabs.io/)
+- **AI Tool**: [Vercel AI SDK](https://sdk.vercel.ai/)
 
 
 ## 🧪 Features
@@ -28,7 +29,8 @@ The goal is to create an AI-powered, user-friendly, and privacy-first experience
 - 🗣️ Verbal Fluency Tasks (type words in a category)
 - ⏱️ Word Recall Test (remember and recall words)
 - 🧩 Digit Span Test (measures how many numbers (digits) a person can remember and repeat either forward or backward)
-- 🤖 AI-Powered analysis of user inputs using OpenAI & Gemini
+- 🤖 AI-Powered analysis of user inputs using OpenAI
+- 🤖 AI-Powered voice assistant
 - 🔒 Data Privacy and Security
   - No data is stored on the server
   - All processing happens locally in your browser
@@ -50,8 +52,12 @@ pnpm run dev
    Create a `.env.local` file in the root directory and add your OpenAI API key:
 
 ```bash
+# OpenAI
 OPENAI_API_KEY=your_openai_api_key
-GEMINI_API_KEY=your_gemini_api_key
+
+# ElevenLabs
+AGENT_ID="your_agent_id"
+ELEVENLABS_API_KEY="your_elevenlabs_api_key"
 ```
 ⚠️ Keep these keys private and secure.
 
