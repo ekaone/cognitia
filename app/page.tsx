@@ -10,6 +10,7 @@ import Upcoming from "@/components/upcoming";
 import FAQ from "@/components/faq";
 import Footer from "@/components/footer";
 import HeadingBar from "@/components/heading-bar";
+import VoiceCall from "@/components/voice-call/voice-call";
 
 export default function Home() {
   return (
@@ -52,6 +53,7 @@ export default function Home() {
             "#84cc16", // lime-500
           ]}
         />
+        <VoiceCall />
       </main>
     </div>
   );
