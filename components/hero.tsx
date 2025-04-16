@@ -42,6 +42,7 @@ export default function Hero() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
+              className="flex items-center gap-4"
             >
               <button
                 onClick={togglePlayPause}
@@ -66,6 +67,33 @@ export default function Hero() {
                   </AnimatePresence>
                 </div>
               </button>
+              <AnimatePresence>
+                {isPlaying && (
+                  <motion.div
+                    initial={{ opacity: 0, width: 0 }}
+                    animate={{ opacity: 1, width: "auto" }}
+                    exit={{ opacity: 0, width: 0 }}
+                    className="flex items-center h-10 gap-1"
+                  >
+                    {[...Array(5)].map((_, i) => (
+                      <motion.div
+                        key={i}
+                        className="bg-purple-500 w-1.5 rounded-full"
+                        initial={{ height: 5 }}
+                        animate={{
+                          height: [5, 15 + Math.random() * 15, 5],
+                        }}
+                        transition={{
+                          duration: 1,
+                          repeat: Number.POSITIVE_INFINITY,
+                          repeatType: "loop",
+                          delay: i * 0.1,
+                        }}
+                      />
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </motion.div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-100 text-center">
               Smart tools. Simple steps. Better care for your{" "}
