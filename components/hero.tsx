@@ -117,8 +117,13 @@ export default function Hero() {
         ref={audioRef}
         className="hidden"
         onEnded={() => setIsPlaying(false)}
+        controls
+        preload="none"
       >
-        <source src="/audio/speech.mp3" type="audio/mpeg" />
+        <source
+          src="https://res.cloudinary.com/ddjsyskef/video/upload/v1744794081/cognitia/orsnczm7zteqixum6wjb.mp3"
+          type="audio/mpeg"
+        />
         Your browser does not support the audio element.
       </audio>
     </section>
