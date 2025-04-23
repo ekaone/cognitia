@@ -9,7 +9,7 @@ import DataPrivacy from "@/components/data-privacy";
 import Upcoming from "@/components/upcoming";
 import FAQ from "@/components/faq";
 import Footer from "@/components/footer";
-import HeadingBar from "@/components/heading-bar";
+import FooterBar from "@/components/footer-bar";
 import VoiceCall from "@/components/voice-call/voice-call";
 
 export default function Home() {
@@ -37,7 +37,7 @@ export default function Home() {
         <Upcoming />
         <FAQ />
         <Footer />
-        <HeadingBar />
+        <FooterBar />
         {/* Meteors background */}
         <Meteors
           number={10}
