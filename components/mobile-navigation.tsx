@@ -49,7 +49,7 @@ export default function MobileNavigation() {
   };
 
   return (
-    <div className="md:hidden">
+    <div className="md:hidden z-50">
       <button
         onClick={toggleMenu}
         className="p-2 text-gray-300 hover:text-white focus:outline-none"

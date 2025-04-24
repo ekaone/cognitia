@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function FooterBar() {
   return (
-    <div className="fixed bottom-0 left-0 right-0 h-[40px] bg-black/40 backdrop-blur-[8px] z-50 flex items-center justify-center border-b border-white/10">
+    <div className="fixed bottom-0 left-0 right-0 h-[40px] bg-black/40 backdrop-blur-[8px] z-30 flex items-center justify-center border-b border-white/10">
       <div className="flex items-center space-x-2 md:space-x-3 px-2 md:px-0">
         <Image
           src="/brand.svg"

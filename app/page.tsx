@@ -1,5 +1,4 @@
 import { Meteors } from "@/components/magicui/meteors";
-
 import MobileNavigation from "@/components/mobile-navigation";
 import DesktopNavigation from "@/components/desktop-navigation";
 import Brand from "@/components/brand";
