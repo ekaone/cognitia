@@ -29,12 +29,11 @@ The goal is to create an AI-powered, user-friendly, and privacy-first experience
 - 🗣️ Verbal Fluency Tasks (type words in a category)
 - ⏱️ Word Recall Test (remember and recall words)
 - 🧩 Digit Span Test (measures how many numbers (digits) a person can remember and repeat either forward or backward)
-- 🤖 AI-Powered analysis of user inputs using OpenAI
-- 🤖 AI-Powered voice assistant
+- 🤖 AI-Powered analysis of user inputs using [OpenAI](https://platform.openai.com/)
+- 🤖 AI-Powered voice assistant using [ElevenLabs](https://elevenlabs.io/) -- ⚠️currently disabled, see [VoiceCall.tsx](https://github.com/ekaone/cognitia/blob/main/components/voice-call/voice-call.tsx)
 - 🔒 Data Privacy and Security
   - No data is stored on the server
   - All processing happens locally in your browser
-- 🔒 User-friendly
 
 
 ## 📦 Getting Started

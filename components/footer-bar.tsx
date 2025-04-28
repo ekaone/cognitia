@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Marquee from "react-fast-marquee";
 import { marqueeList } from "@/data/marquee-list";
+import { Badge } from "@/components/ui/badge";
 
 export default function FooterBar() {
   // Define a set of colors to randomly assign to icons
@@ -39,6 +40,14 @@ export default function FooterBar() {
                   className="text-gray-300 hover:text-gray-100"
                 >
                   {item.title}
+                  {item.badge && (
+                    <Badge
+                      className="ml-1 bg-amber-600 text-white align-top text-xs"
+                      variant="secondary"
+                    >
+                      {item.badge}
+                    </Badge>
+                  )}
                 </Link>
               </span>
             </div>

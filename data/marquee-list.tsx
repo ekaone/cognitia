@@ -23,6 +23,7 @@ export const marqueeList = [
     ),
     title: "Word Recall Test",
     link: "/word-recall",
+    badge: "",
   },
   {
     icon: (
@@ -45,6 +46,7 @@ export const marqueeList = [
     ),
     title: "Verbal Fluency Tasks",
     link: "/verbal-fluency",
+    badge: "",
   },
   {
     icon: (
@@ -69,6 +71,7 @@ export const marqueeList = [
     ),
     title: "Digit Span Test",
     link: "/digit-span",
+    badge: "",
   },
   {
     icon: (
@@ -91,5 +94,80 @@ export const marqueeList = [
     ),
     title: "Trail Making Test",
     link: "/trail-making",
+    badge: "",
+  },
+  {
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="lucide lucide-scan-eye-icon lucide-scan-eye"
+      >
+        <path d="M3 7V5a2 2 0 0 1 2-2h2" />
+        <path d="M17 3h2a2 2 0 0 1 2 2v2" />
+        <path d="M21 17v2a2 2 0 0 1-2 2h-2" />
+        <path d="M7 21H5a2 2 0 0 1-2-2v-2" />
+        <circle cx="12" cy="12" r="1" />
+        <path d="M18.944 12.33a1 1 0 0 0 0-.66 7.5 7.5 0 0 0-13.888 0 1 1 0 0 0 0 .66 7.5 7.5 0 0 0 13.888 0" />
+      </svg>
+    ),
+    title: "MMSE/MoCA",
+    link: "/",
+    badge: "In Development",
+  },
+  {
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="lucide lucide-hourglass-icon lucide-hourglass"
+      >
+        <path d="M5 22h14" />
+        <path d="M5 2h14" />
+        <path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22" />
+        <path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2" />
+      </svg>
+    ),
+    title: "Reaction Time",
+    link: "/",
+    badge: "Coming Soon",
+  },
+  {
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="lucide lucide-file-clock-icon lucide-file-clock"
+      >
+        <path d="M16 22h2a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3" />
+        <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+        <circle cx="8" cy="16" r="6" />
+        <path d="M9.5 17.5 8 16.25V14" />
+      </svg>
+    ),
+    title: "Clock Drawing",
+    link: "/",
+    badge: "In Development",
   },
 ];
