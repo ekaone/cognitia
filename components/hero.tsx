@@ -33,18 +33,16 @@ export default function Hero() {
       >
         {/* Gradient circular background with blur effect and smooth animation */}
         <motion.div
-          initial={{ opacity: 0.7, scale: 0.95, rotate: 0 }}
+          initial={{ opacity: 0.7, scale: 0.98 }}
           animate={{
-            opacity: [0.7, 0.9, 0.7],
-            scale: [0.95, 1.05, 0.95],
-            rotate: [0, 360],
+            opacity: [0.7, 0.85, 0.7],
+            scale: [0.98, 1.02, 0.98],
           }}
           transition={{
-            opacity: { duration: 6, repeat: Infinity, repeatType: "reverse" },
-            scale: { duration: 8, repeat: Infinity, repeatType: "reverse" },
-            rotate: { duration: 30, repeat: Infinity, ease: "linear" },
+            opacity: { duration: 4, repeat: Infinity, repeatType: "reverse" },
+            scale: { duration: 6, repeat: Infinity, repeatType: "reverse" },
           }}
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full gradient-radial-purple blur-[80px] pointer-events-none"
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[700px] md:h-[700px] rounded-full gradient-radial-purple blur-[40px] md:blur-[80px] pointer-events-none will-change-transform will-change-opacity"
         />
         <div className="max-w-3xl mx-auto relative z-10">
           <div className="flex flex-col items-center gap-8">
