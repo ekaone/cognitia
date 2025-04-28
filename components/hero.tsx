@@ -31,8 +31,21 @@ export default function Hero() {
         }}
         className="mb-16"
       >
-        {/* Gradient circular background with blur effect */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full gradient-radial-purple blur-[80px] pointer-events-none"></div>
+        {/* Gradient circular background with blur effect and smooth animation */}
+        <motion.div
+          initial={{ opacity: 0.7, scale: 0.95, rotate: 0 }}
+          animate={{
+            opacity: [0.7, 0.9, 0.7],
+            scale: [0.95, 1.05, 0.95],
+            rotate: [0, 360],
+          }}
+          transition={{
+            opacity: { duration: 6, repeat: Infinity, repeatType: "reverse" },
+            scale: { duration: 8, repeat: Infinity, repeatType: "reverse" },
+            rotate: { duration: 30, repeat: Infinity, ease: "linear" },
+          }}
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full gradient-radial-purple blur-[80px] pointer-events-none"
+        />
         <div className="max-w-3xl mx-auto relative z-10">
           <div className="flex flex-col items-center gap-8">
             <p className="text-purple-400 text-2xl">
