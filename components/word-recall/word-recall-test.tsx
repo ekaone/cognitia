@@ -118,7 +118,7 @@ export default function WordRecallTest() {
                 exit={{ opacity: 0, y: -20 }}
                 className="flex flex-col items-center justify-center space-y-6 py-10"
               >
-                <div className="flex items-center gap-3 mb-4">
+                <div className="flex flex-col md:flex-row items-center gap-3 mb-4">
                   <Brain className="w-8 h-8 text-purple-500" />
                   <h2 className="text-2xl font-semibold text-center bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
                     Ready to test your memory?
@@ -145,11 +145,11 @@ export default function WordRecallTest() {
                 className="space-y-8"
               >
                 <div className="space-y-4">
-                  <div className="flex justify-between items-center">
-                    <h3 className="text-lg font-medium">
+                  <div className="flex flex-col items-center">
+                    <h3 className="text-lg font-medium mb-4">
                       Memorize these words
                     </h3>
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center justify-between gap-3">
                       <div className="flex items-center gap-3 bg-purple-50 dark:bg-purple-900/20 px-4 py-2 rounded-full">
                         <Clock className="w-4 h-4 text-purple-600" />
                         <span className="text-sm font-medium text-purple-600">
