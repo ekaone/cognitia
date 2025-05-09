@@ -1,7 +1,6 @@
 "use client";
 
 import { ExternalLink } from "lucide-react";
-import Link from "next/link";
 
 export default function DesktopNavigation() {
   const scrollToSection = (sectionId: string) => {
